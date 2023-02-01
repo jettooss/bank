@@ -22,3 +22,15 @@
 - I used a parser in the project to get information about real estate
 - Work a lot more with ORM
 - More practice for yourself
+
+
+## interface description
+
+The main page of the site.If in short, then here it is described why it is worth choosing this bank .
+<img src="https://raw.githubusercontent.com/jettooss/bank/main/screenshots/img.png" >
+site header
+<img src="https://raw.githubusercontent.com/jettooss/bank/main/screenshots/img_5.png" >
+The user must enter the information.This is necessary in order for the approval rating or rejection of the loan to be considered, or because of a bad rating, the interest rate increases
+<img src="https://raw.githubusercontent.com/jettooss/bank/main/screenshots/img_3.png" >
+
+
