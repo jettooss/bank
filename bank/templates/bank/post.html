@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    {% include 'bank/menu.html' %}
+</head>
+<body>
+<main>
+
+    <div class="album py-5 bg-light">
+
+        <div class="container">
+
+            <div class="row ">
+                {#          {% for p in form %}#}
+                <div class="col-sm">
+                    <div class="card shadow-sm">
+                        <img src="{{ posts.photo }}" class=" img-thumbnail" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ posts.complex }}</h5>
+                            <p class="card-text">{{ posts.description|linebreaks }}</p>
+                            <div class="d-flex justify-content-between align-items-star-">
+                                <p class="card-text-star">Адрес:{{ posts.street }}</p>
+
+                            </div>
+                            <p class="card-text"><small class="text-muted">Метро:{{ posts.metro }}</small></p>
+                            <div class="container">
+                                <div class="row align-items-start">
+                                    <div class="col"></div>
+                                    <div class="col">{{ housing.title }}</div>
+                                    <div class="col">{{ housing.title1 }}</div>
+                                    <div class="col">{{ housing.title2 }}</div>
+                                    <div class="col">{{ housing.title3 }}</div>
+                                    <div class="col">{{ housing.title4 }}</div>
+                                    <div class="col">{{ housing.title5 }}</div>
+                                </div>
+
+                                <div class="row align-items-start">
+                                    <div class="col">Площадь</div>
+                                    <div class="col">{{ housing.area }} </div>
+                                    <div class="col">{{ housing.area1 }} </div>
+                                    <div class="col">{{ housing.area2 }} </div>
+                                    <div class="col">{{ housing.area3 }} </div>
+                                    <div class="col">{{ housing.area4 }}</div>
+                                    <div class="col">{{ housing.area5 }}</div>
+                                </div>
+                                <div class="row align-items-start">
+                                    <div class="col">Цена</div>
+                                    <div class="col">{{ housing.prices }}</div>
+                                    <div class="col">{{ housing.prices1 }}</div>
+                                    <div class="col">{{ housing.prices2 }}</div>
+                                    <div class="col">{{ housing.prices3 }}</div>
+                                    <div class="col">{{ housing.prices4 }}</div>
+                                    <div class="col">{{ housing.prices5 }}</div>
+                                </div>
+
+
+                            </div>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <select class="form-select"  id="test" name='test' aria-label="Default select example">
+                                    <option selected>Выберите квартиру</option>
+                                    <option value="{{ housing.prices }}">{{ housing.title }}</option>
+                                    <option value="{{ housing.prices1 }}">{{ housing.title1 }}</option>
+                                    <option value="{{ housing.prices2 }}">{{ housing.title2 }}</option>
+                                    <option value="{{ housing.prices3 }}">{{ housing.title3 }}</option>
+                                    <option value="{{ housing.prices4 }}">{{ housing.title4 }}</option>
+
+                                </select>
+                                {{ d.login }}
+                                {% for message in messages %}
+                                    <p id="messages">{{ message }}</p>
+                                {% endfor %}
+                                <p></p>
+{#                                <p><a class="btn btn-lg btn-primary">Купить</a></p>#}
+                                 <button type="submit"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-3 text-body">Купить
+
+                                    </button>
+{#                                                                                      <p><a class="btn btn-lg btn-primary" href="{% url 'mortgage' post_id=1 %}" >Купить</a></p>#}
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <p></p>
+{#                {% extends "сredit1.html" %}#}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

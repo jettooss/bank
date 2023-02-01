@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    {% include 'bank/menu.html' %}
+    <style>
+        .gradient-custom {
+            background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+            linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+            linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+            radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+            radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+            background-blend-mode: screen, color-dodge, overlay, difference, normal;
+        }
+    </style>
+</head>
+<body>
+<main class="mt-5">
+
+    {#<h1>заполните персональные данные</h1>#}
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="mx-auto">
+                <h1 class="fw-light">Заполните персональные данные</h1>
+                <p class="lead text-muted">Это нужно для одобрения кредита и создание банковской карта </p>
+            </div>
+        </div>
+
+    </section>
+    <div class="container">
+        <!--Section: Content-->
+        <p class="card-text">
+            Введите данные
+        </p>
+        <section>
+
+            <form class="row g-3" method="POST">
+                {% csrf_token %}
+                <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Имя</label>
+
+                    {{ u_form.first_name }}
+                    <div class="form-error">{{ f.errors }}</div>
+
+                </div>
+                <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Фамилия</label>
+                    {{ u_form.last_name }}
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="validationServer02" class="form-label">Логин</label>
+                    {{ u_form.idd }}
+
+
+                    <div class="form-error">{{ u_form.errors.idd }}</div>
+
+
+                    {##}
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="validationServer04" class="form-label">Пол</label>
+                    {{ u_form.genders }}
+
+                </div>
+                <div class="col-md-3">
+                    <label for="validationServer05" class="form-label">Проживание в данный момент</label>
+                    {#    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>#}
+                    {{ u_form.habitation }}
+
+                </div>
+                <div class="col-md-3">
+                    <label for="validationServer05" class="form-label">Серия паспорта:</label>
+                    {#    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>#}
+                    {{ u_form.passport_series }}
+
+                </div>
+                <div class="col-md-3">
+
+                    <label for="validationServer05" class="form-label">Номер паспорта</label>
+                    {#    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>#}
+                    {{ u_form.passport_number }}
+                    <div id="validationServer05Feedback" class="invalid-feedback">
+                        Пожалуйста, предоставьте действующий почтовый индекс.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationServer05" class="form-label">Регистрация</label>
+                    {{ u_form.registration }}
+                    {#    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>#}
+                    <div id="validationServer05Feedback" class="invalid-feedback">
+                        Пожалуйста, предоставьте действующий почтовый индекс.
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Отправить форму</button>
+{#                     {% if u_form.errors %}#}
+{#	        		<small class="error">{{ u_form.errors  }} ,</small>#}
+{#	        	{% endif %}#}
+                </div>
+
+            </form>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5"/>
+        <section>
+
+            <form class="row g-3" method="POST">
+                {% csrf_token %}
+                <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Отношения</label>
+
+                    {{ c_form.relationship}}
+
+                </div>
+                <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Дети</label>
+                    {{ c_form.children}}
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="validationServer02" class="form-label">Средняя зарплата</label>
+                  {{ c_form.salary}}
+
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="validationServer04" class="form-label">Фамилия</label>
+                   {{ c_form.login}}
+
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Отправить форму</button>
+                </div>
+                <div class="form-error">{{ u_form.non_field_errors }}</div>
+            </form>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5"/>
+
+        <!--Section: Content-->
+        <section class="gradient-custom">
+
+            <div class="container p-0">
+                <div class="container my-5 py-5">
+                    <div class="row d-flex justify-content-center py-5">
+                        <div class="col-md-7 col-lg-5 col-xl-4">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body p-4">
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <div class="col-md-8">
+
+                                                {{ p_form.card_number }}
+
+                                            </div>
+                                            <img src="https://sm-profil.ru/thumb/2/kJTIlqYXCWANimdJnP49Uw/100r75/d/mir-3.png"
+                                                 alt="visa" width="70px"/>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mb-10">
+                                            <div class="col-md-8">
+                                                {{ p_form.name }}
+
+                                                <label class="form-label" for="typeName">ФИО</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center pb-2">
+                                            <div class="form-outline">
+                                                {{ p_form.term }}
+
+                                            </div>
+                                            <div class="form-outline">
+                                                {{ p_form.Cvv }}
+
+                                            </div>
+                                            <button type="submit" class="btn btn-info btn-lg btn-rounded">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</main>
+        <hr class="my-9" />
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+</html>

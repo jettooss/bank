@@ -1,0 +1,50 @@
+{% load static %}
+
+
+
+
+
+
+<div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+              <img src="{% static "images/1.png" %}" class="d-block w-100"  style="max-height: 800px ;" alt="...">
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class="fw-bolder" style="color: black">Кредиты на любые цели</h1>
+            <p class="fw-bolder" style="color: black">Кредит  — лучший способ получить деньги в долг без справок и поручителей на любые цели: ремонт, образование, отдых или любые другие покупки. Удобный расчет на калькуляторе и оформление онлайн
+
+</p>
+            <p><a class="btn btn-lg btn-primary" href="{%url 'credit1'  %}">Кредит</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+       <img src="{% static "images/3.jpg" %}" class="d-block w-100"   style="max-height: 800px ;"    alt="...">
+        <div class="container">
+          <div class="carousel-caption text-start">
+                 <h1 class="fw-bolder" style="color: black">Как работает ипотека?</h1>
+            <p class="fw-bolder" style="color: black">Ипотечный кредит — это заем на покупку недвижимости. В этом случае гарантией возврата долга выступает покупаемая недвижимость, например квартира.
+
+Квартира оформляется как собственность заемщика.</p>
+            <p><a class="btn btn-lg btn-primary" href="{%url 'credit'  %}">Ипотека</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

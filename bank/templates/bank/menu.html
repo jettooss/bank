@@ -1,0 +1,56 @@
+
+{% load static %}
+<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" data-bs-theme="light">
+    <div class="container-fluid">
+                 <img src="{% static "images/4.png" %}" class="rounded float-start" width="100" >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Переключение навигации">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor03">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item ">
+                <a class="navbar-brand" aria-current="page" href="{% url 'bank' %}" role="button">Банк</a>
+              </li>
+{#              <li class="nav-item">#}
+{#                <a class="navbar-brand" href="" rel="nofollow"#}
+{#                  role="button">Инвестиции</a>#}
+{#              </li>#}
+              <li class="nav-item">
+                <a class="navbar-brand" href="{% url 'credit' %}" role="button" >Кредиты</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbar-brand" href="{% url 'account' %}" role="button">Личный кабинет</a>
+              </li>
+            </ul>
+
+        <form class="d-flex" role="search">
+           		{% if request.user.is_authenticated %}
+             	<p class="fs-1"> {{user.username}} | <a class="btn btn-primary" href="{% url 'logout' %}">Выйти</a></p>
+                    	<p class="fs-1"><a class="btn btn-primary" href="{%url 'score'  %}">пополнить счет</a></p>
+
+                {% else %}
+             <a class="btn btn-primary" href="{% url 'login' %}" role="button">Войти</a>
+                {% endif %}
+        </form>
+
+      </div>
+    </div>
+  </nav>
+<nav class="navbar fixed-bottom navbar-expand" style="background-color: #e3f2fd;" >
+
+  <div class="container-fluid">
+
+     <img src="{% static "images/4.png" %}" class="rounded float-start" width="100" >
+      <p class="text-center">Выполнил:Утляков Андрей </p>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    </div>
+      <p class="fw-weight-bold"><div>
+   <pre class="fs-6">79000000<br />Для звонков по России</pre>
+   </div></p>
+
+
+  </div>
+
+</nav>

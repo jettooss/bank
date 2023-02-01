@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+<section class="gradient-custom">
+
+    <div class="container p-0">
+        <div class="container my-5 py-5">
+            <div class="row d-flex justify-content-center py-5">
+                <div class="col-md-7 col-lg-5 col-xl-4">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="col-md-8">
+                                        {{ p_form.card_number }}
+                                    </div>
+                                    <img src="https://sm-profil.ru/thumb/2/kJTIlqYXCWANimdJnP49Uw/100r75/d/mir-3.png"
+                                         alt="visa" width="70px"/>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center mb-10">
+                                    <div class="col-md-8">
+                                        {{ p_form.name }}
+                                        <label class="form-label" for="typeName">ФИО</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                    <div class="form-outline">
+                                        {{ p_form.term }}
+                                    </div>
+                                    <div class="form-outline">
+                                        {{ p_form.Cvv }}
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-10">
+                                    {{ p_form.balance }}
+
+                                    <button type="submit" class="btn btn-info btn-lg btn-rounded">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
