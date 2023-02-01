@@ -27,7 +27,7 @@ class BankInterest():
             rest = rest - mp_real
             mp_cnt = mp_cnt - 1
         return arr, round(sum(arr), 2)
-# Create your views here.
+
 def index(request):
     p_form = cartForm2()
     context = {
@@ -272,7 +272,7 @@ def show_post(request, post_id):
                 #                   Сумма,  процент, срок(год)
                 diff = BankInterest(int(prise), 7, int(15)).diff_int()
                 messages.info(request, f' Нужна Ипотека :{login}')
-# не реальзовал
+# не реальзован
             else:
                 messages.info(request, f' У вас недостаточно средств:{login}')
 
