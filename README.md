@@ -1,5 +1,5 @@
 # bank
-## Author:Jettoss(Утляков Андрей )
+## Author:Jettooss(Утляков Андрей )
 ## The project was carried out in Russian
 
 
