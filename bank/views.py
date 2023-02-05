@@ -219,7 +219,7 @@ def score(request):
     return render(request, 'bank/score.html', context)
 
 
-# @login_required(login_url='login')
+
 
 def show_post(request, post_id):
 
@@ -243,7 +243,7 @@ def show_post(request, post_id):
 
         else:
             if int(balances) >= int(prise):
-                # messages.info(request, f'Вам  купили  квартиру :{login}')
+
                 cv=(
                     login,
                     post_id,
@@ -272,7 +272,7 @@ def show_post(request, post_id):
                 #                   Сумма,  процент, срок(год)
                 diff = BankInterest(int(prise), 7, int(15)).diff_int()
                 messages.info(request, f' Нужна Ипотека :{login}')
-# не реальзован
+# не реальзовано
             else:
                 messages.info(request, f' У вас недостаточно средств:{login}')
 
