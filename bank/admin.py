@@ -40,6 +40,3 @@ class estate_admin(admin.ModelAdmin):
 @admin.register(information)
 class information_admin(admin.ModelAdmin):
     list_display = ('login', 'relationship', 'children', 'salary')
-# @admin.register(mortgage)
-# class mortgage_admin(admin.ModelAdmin):
-#     list_display = ('pk', 'login', 'loan', 'term', 'percent', 'type_loan', 'datetime','status')

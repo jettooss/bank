@@ -144,30 +144,3 @@ class information(models.Model):
     class Meta:
         verbose_name_plural = 'Дополнительная информация людей '
 
-
-# class mortgage(models.Model):
-#     login = models.ForeignKey(personal_data1, on_delete=models.CASCADE, verbose_name="Логин")
-#     loan = models.FloatField(verbose_name="Сумма кредита ")
-#     term = models.FloatField(verbose_name="время ", )
-#     A = (
-#         ('О', 'Кредит'),
-#         ('И', 'Ипотека'),
-#
-#     )
-#
-#     type_loan = models.CharField(choices=A, verbose_name="Тип кредита ", max_length=1, default='И')
-#     percent = models.IntegerField(verbose_name="Проценты ")
-#     B = (
-#         ('О', 'Задолжник'),
-#         ('П', 'в процессе'),
-#         ('З', 'Завершен'),
-#
-#     )
-#
-#     status = models.CharField(choices=B, verbose_name="статус  кредита ", max_length=1, default='П')
-#     datetime = models.DateTimeField(default=dt.now)
-#
-#
-#
-#     class Meta:
-#         verbose_name_plural = 'Ипотека'

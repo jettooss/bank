@@ -62,8 +62,6 @@ def account(request):
         c_form = information_form(request.POST)
         if u_form.is_valid():
             u_form.save()
-
-            messages.success(request, f'Your account has been updated!')
         elif p_form.is_valid():
             p_form.save()
         elif c_form.is_valid():
